@@ -1,0 +1,38 @@
+﻿@model WebApplication1.Models.StudentViewModel
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h1>Edit Student</h1>
+
+<form asp-action="Edit">
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IndexNumber"></label>
+        <input asp-for="IndexNumber" class="form-control" />
+        <span asp-validation-for="IndexNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Birth"></label>
+        <input asp-for="Birth" class="form-control" />
+        <span asp-validation-for="Birth" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
