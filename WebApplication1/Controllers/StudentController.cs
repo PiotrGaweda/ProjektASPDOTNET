@@ -1,23 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Data;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
     public class StudentController : Controller
     {
-        static List<StudentViewModel> students = new List<StudentViewModel>();
+        private UniversityContext _context;
+        public StudentController(UniversityContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
-        public IActionResult Index(string searchTerm)
+        public IActionResult Index()
         {
-            var filteredStudents = string.IsNullOrWhiteSpace(searchTerm)
-                ? students
-                : students.Where(s => s.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)).ToList();
-
-            return View(filteredStudents);
+            return View(_context.Students.ToList());
         }
 
         [HttpGet]
@@ -31,76 +29,15 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                student.Id = (students.Count > 0 ? students.Max(x => x.Id) : 0) + 1;
-                students.Add(student);
+                // data validated
+
+                this._context.Add(student);
                 return RedirectToAction("Index");
             }
-
-            return View(student);
-        }
-
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            var student = students.FirstOrDefault(x => x.Id == id);
-            if (student == null)
+            else
             {
-                return NotFound();
+                return View(); // go back to the form with errors
             }
-            return View(student);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(StudentViewModel updatedStudent)
-        {
-            if (ModelState.IsValid)
-            {
-                var student = students.FirstOrDefault(x => x.Id == updatedStudent.Id);
-                if (student != null)
-                {
-                    student.Name = updatedStudent.Name;
-                    student.Email = updatedStudent.Email;
-                    student.IndexNumber = updatedStudent.IndexNumber;
-                    student.Birth = updatedStudent.Birth;
-                }
-                return RedirectToAction("Index");
-            }
-
-            return View(updatedStudent);
-        }
-
-        [HttpGet]
-        public IActionResult Delete(int id)
-        {
-            var student = students.FirstOrDefault(x => x.Id == id);
-            if (student == null)
-            {
-                return NotFound();
-            }
-            return View(student);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var student = students.FirstOrDefault(x => x.Id == id);
-            if (student != null)
-            {
-                students.Remove(student);
-            }
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet]
-        public IActionResult Details(int id)
-        {
-            var student = students.FirstOrDefault(x => x.Id == id);
-            if (student == null)
-            {
-                return NotFound();
-            }
-            return View(student);
         }
     }
 }
-

@@ -1,4 +1,5 @@
 ﻿using Data.Entities;
+using Data.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace Data
 {
     public class UniversityContext : DbContext
     {
-        public UniversityContext(DbContextOptions<UniversityContext> options) : base(options)
+        public UniversityContext()
         {
         }
 
@@ -27,7 +28,7 @@ namespace Data
                 new InstructorEntity() { Id = 1, Name = "Konrad Ogłaza", AcademicTitle = "mgr inż." }
             );
             modelBuilder.Entity<CourseEntity>().HasData(
-                new CourseEntity() { Id = 1, Name = "ASP.NET", Credits = 10, InstructorId = 1 }
+                new CourseEntity() { Id = 1, Name = "ASP.NET", Title = "SomeTitle", Credits = 10, InstructorId = 1 }
             );
         }
     }

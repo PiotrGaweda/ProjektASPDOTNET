@@ -7,6 +7,7 @@ C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.Generated
 C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.AssemblyInfoInputs.cache
 C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.AssemblyInfo.cs
 C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.sourcelink.json
 C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.dll
 C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\refint\Data.dll
 C:\Users\piotr\source\repos\WebApplication1\Data\obj\Debug\net8.0\Data.pdb

@@ -1,6 +1,0 @@
-C:\Users\piotr\source\repos\WebApplication1\WebApplicationTestProject\bin\Debug\net8.0\.msCoverageSourceRootsMapping_WebApplicationTestProject
-C:\Users\piotr\source\repos\WebApplication1\WebApplicationTestProject\obj\Debug\net8.0\WebApplicationTestProject.csproj.AssemblyReference.cache
-C:\Users\piotr\source\repos\WebApplication1\WebApplicationTestProject\obj\Debug\net8.0\WebApplicationTestProject.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\piotr\source\repos\WebApplication1\WebApplicationTestProject\obj\Debug\net8.0\WebApplicationTestProject.AssemblyInfoInputs.cache
-C:\Users\piotr\source\repos\WebApplication1\WebApplicationTestProject\obj\Debug\net8.0\WebApplicationTestProject.AssemblyInfo.cs
-C:\Users\piotr\source\repos\WebApplication1\WebApplicationTestProject\obj\Debug\net8.0\WebApplicationTestProject.csproj.CoreCompileInputs.cache

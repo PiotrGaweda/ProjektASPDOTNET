@@ -1,3 +1,8 @@
+using Data;
+using WebApplication1.Services;
+using Data.Entities;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,3 +30,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+builder.Services.AddTransient<IStudentService, StudentService>();
